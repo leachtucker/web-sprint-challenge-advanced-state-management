@@ -10,7 +10,12 @@ import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import { appReducer } from './reducers/index';
 
+
+
 const logger = createLogger();
 const store = createStore(appReducer, applyMiddleware(thunk, logger));
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById("root"));
+ReactDOM.render(
+<Provider store={store}>
+   <App />
+</Provider>, document.getElementById("root"));

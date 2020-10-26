@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import {v4 as uuid} from 'uuid';
 import { postSmurf } from '../actions/index';
 
 const initialFormValues = {
@@ -13,8 +12,7 @@ const SmurfForm = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues);
 
     const onPost = (smurf) => {
-        const newSmurf = {...smurf, id: uuid()};
-        props.postSmurf(newSmurf);
+        props.postSmurf(smurf);
     }
 
     const onSubmit = evt => {

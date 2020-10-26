@@ -3,6 +3,8 @@ import Smurf from './Smurf';
 
 import { connect } from 'react-redux';
 import { fetchSmurfs } from '../actions/index';
+import { Link } from 'react-router-dom';
+
 
 const SmurfList = (props) => {
     useEffect(() => {
@@ -13,11 +15,10 @@ const SmurfList = (props) => {
         <>
             {
                 props.smurfs.map(smurf => {
-                    return <Smurf key={smurf.id} smurf={smurf}/>
+                    return <Link key={smurf.id} to={`profile/${smurf.id}`}><Smurf key={smurf.id} smurf={smurf} /></Link>
                 })
             }
         </>
-
     );
 
 }
