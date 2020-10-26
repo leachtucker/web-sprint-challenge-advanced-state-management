@@ -6,20 +6,12 @@ import { useRouteMatch } from 'react-router-dom';
 const Profile = (props) => {
     let match = useRouteMatch();
 
-    console.log(props.smurfs, match);
     const { id } = match.params;
     const smurfIds = props.smurfs.map(smrf => {
         return smrf.id;
     });
+
     const smurf = props.smurfs[smurfIds.indexOf(parseInt(id))];
-
-    console.log(smurf);
-
-    useEffect(() => {
-
-    }, []);
-
-    console.log(match);
 
     return (
         <div className="container white">
